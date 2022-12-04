@@ -12,6 +12,15 @@
 
 <br>
 
-# C++
-- Boost 사용
+---
+<br>
+
+## 🌱Boost 
   - [PosixTime](Boost/Boost/PosixTime.md)
+
+## 🌱 Linux
+  - [kill](Linux/kill.md)
+  - [command 모음](Linux/command_모음집.md)
+
+## 🌱 Docker
+  - [mariadb container 사용](Docker/mariadb.md)
