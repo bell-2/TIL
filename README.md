@@ -22,6 +22,7 @@
   - [kill](Linux/kill.md)
   - [command 모음](Linux/command_모음집.md)
   - [자원 Limit 설정](Linux/limit설정.md)
+  - [Symbolic Link](Linux/link.md)
 
 ## 🌱 Docker
   - [mariadb container 사용](Docker/mariadb.md)
