@@ -30,3 +30,4 @@
 
 ## 🌱 Spring & Java
   - [Spring Framework](Spring/SpringFramework.md)
+  - [Spring Model](Spring/Spring%20Model.md)
