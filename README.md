@@ -24,6 +24,7 @@
   - [자원 Limit 설정](Linux/limit설정.md)
   - [Symbolic Link](Linux/link.md)
   - [PID](Linux/Pid.md)
+  - [pprof](Linux/pprof.md)
 
 ## 🌱 Docker
   - [mariadb container 사용](Docker/mariadb.md)
