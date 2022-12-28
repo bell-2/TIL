@@ -35,3 +35,4 @@
   - [MVC란](Spring/MVC.md)
   - [Web Server란](Spring/WebServer.md)
   - [WAS](Spring/WAS.md)
+  - [SOLID](Spring/Java%20설계%20방법(SOLID).md)
