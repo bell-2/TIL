@@ -35,3 +35,6 @@
   - [MVC란](Spring/MVC.md)
   - [Web Server란](Spring/WebServer.md)
   - [WAS](Spring/WAS.md)
+
+## 🌱 Backend
+- [Domain Name](Backend/Domain%20Name.md)
