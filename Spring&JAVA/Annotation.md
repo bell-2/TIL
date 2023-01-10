@@ -16,6 +16,10 @@ C++/C 다루다가 Java 코드를 봤을 때 가장 재밌게 본 문법이었�
 
 # 자주 쓰는 Annotation
 
+공부하면서 조사한거 계속 추가 작성할 예정 입니다 🌱
+
+<br>
+
 ## 1) @Override
 - 메소드를 Override 할 것이니 컴파일러에게 알려줍니다
 - 상속 받은 부모 클래쓰/인터페이스가 없다!?면 컴파일러에서 오류를 발생시켜줍니다
@@ -39,3 +43,27 @@ public void deprecatedFunc()
     System.out.println("Deprecated 이제 안 써요");
 }
 ```
+
+## 3) @Autowired
+- 주입하려고 하는 객체의 타입이 일치하는 객체를 자동으로 주입해줌
+- 필드/생성자/Setter에만 붙일 수 있음
+- 필트/Setter에 사용할 경우 기본 생성자가 정의되어 있어야 합니닥
+
+```java
+public class AutowiredClassTest {
+    @Autowired
+    private AutoWiredClass autoWire;
+}
+```
+
+## 4) RunWith
+- 스프링의 테스트 Context 프레임워크의 JUnit 확장 기능을 지정할 수 있츰
+- 단위 테스트 작성 시 사용하세호
+  
+```java
+@RunWith(SpringJUnit4ClassRunner.class)
+public class RunClassTest {
+    @Autowired
+    private RunClass autoWire;
+}
+  ```
