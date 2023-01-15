@@ -39,3 +39,25 @@ public void deprecatedFunc()
     System.out.println("Deprecated 이제 안 써요");
 }
 ```
+
+## 3) @Autowired
+
+```java
+@Autowired
+@Qualifier("nameAddService")
+```
+- 해당 변수 및 메서드에 스프링이 관리하는 Bean을 자동으로 맵핑 해줌
+  - 변수 타입과 일치하는 컨텍스트 내의 Bean을 찾아줌
+- 타입이 일치하는 Bean이 있으면 인스턴스 변수에 주입해줌 (DI)
+  - 일반적으로 DI를 위해서는 생성자/수정자 같은 메서드가 필요하지만 @Autowired를 쓰면 메서드가 없어도 주입 가능
+
+- @Resource는 이름으로 의존성 주입! @Autowired는 타입으로 의존성 주입
+  - 동일한 Bean 타입이 있다면 @Qualifier를 같이 사용해야 함
+
+### <component-scan> Tag
+```xml
+<context:component-scan base-package="test.worldTest">
+```
+
+### @Qualifier
+- @Autowired로 연결한 Bean 목록에서 Bean을 구별해줌
