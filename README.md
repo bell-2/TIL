@@ -35,7 +35,7 @@
   - [SOLID](Spring/Java%20설계%20방법(SOLID).md)
   - [Annotation](Spring/Annotation.md)
   - [StringUtils](Spring/StringUtils.md)
-  - [Lombok](Spring/Lombok.md))
+  - [Lombok](Spring/Lombok.md)
 
 ## 🌱 Backend
 - [Domain Name](Backend/Domain%20Name.md)
