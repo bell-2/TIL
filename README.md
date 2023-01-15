@@ -27,15 +27,15 @@
   - [mariadb container 사용](Docker/mariadb.md)
 
 ## 🌱 Spring & Java
-  - [Spring Framework](Spring&JAVA/SpringFramework.md))
-  - [Spring Model](Spring&JAVA/Spring%20Model.md)
-  - [MVC란](Spring&JAVA/MVC.md)
-  - [Web Server란](Spring&JAVA/WebServer.md)
-  - [WAS](Spring&JAVA/WAS.md)
-  - [SOLID](Spring&JAVA/Java%20설계%20방법(SOLID).md)
-  - [Annotation](Spring&JAVA/Annotation.md)
-  - [StringUtils](Spring&JAVA/StringUtils.md)
-  - [Lombok](Spring&JAVA/Lombok.md)
+  - [Spring Framework](SpringSpringFramework.md))
+  - [Spring Model](SpringSpring%20Model.md)
+  - [MVC란](Spring/MVC.md)
+  - [Web Server란](Spring/WebServer.md)
+  - [WAS](Spring/WAS.md)
+  - [SOLID](Spring/Java%20설계%20방법(SOLID).md)
+  - [Annotation](Spring/Annotation.md)
+  - [StringUtils](Spring/StringUtils.md)
+  - [Lombok](Spring/Lombok.md))
 
 ## 🌱 Backend
 - [Domain Name](Backend/Domain%20Name.md)
