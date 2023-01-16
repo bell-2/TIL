@@ -27,8 +27,8 @@
   - [mariadb container 사용](Docker/mariadb.md)
 
 ## 🌱 Spring & Java
-  - [Spring Framework](SpringSpringFramework.md))
-  - [Spring Model](SpringSpring%20Model.md)
+  - [Spring Framework](Spring/SpringFramework.md)
+  - [Spring Model](Spring/Spring%20Model.md)
   - [MVC란](Spring/MVC.md)
   - [Web Server란](Spring/WebServer.md)
   - [WAS](Spring/WAS.md)
@@ -36,6 +36,7 @@
   - [Annotation](Spring/Annotation.md)
   - [StringUtils](Spring/StringUtils.md)
   - [Lombok](Spring/Lombok.md)
+  - [XML 설정 파일 모음집](Spring/XML%20설정.md)
 
 ## 🌱 Backend
 - [Domain Name](Backend/Domain%20Name.md)
