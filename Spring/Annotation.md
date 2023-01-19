@@ -61,3 +61,14 @@ public void deprecatedFunc()
 
 ### @Qualifier
 - @Autowired로 연결한 Bean 목록에서 Bean을 구별해줌
+
+## 4) RequestMapping
+- 요청에 대해 어떤 Controller, 어떤 메소드가 처리할지를 맵핑 해줌
+
+```java
+@RequestMapping(value="/bell/v1/name", method=RequestMethod.GET)
+	public @ResponseBody HashMap<String, Object> getOpenList(HttpServletRequest request, HttpServletResponse response)
+      {
+        ...
+      }
+```
