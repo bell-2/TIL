@@ -62,7 +62,7 @@ public void deprecatedFunc()
 ### @Qualifier
 - @Autowired로 연결한 Bean 목록에서 Bean을 구별해줌
 
-## 4) RequestMapping
+## 4) @RequestMapping
 - 요청에 대해 어떤 Controller, 어떤 메소드가 처리할지를 맵핑 해줌
 
 ```java
@@ -72,3 +72,8 @@ public void deprecatedFunc()
         ...
       }
 ```
+
+## 5) @Component
+- component-scan을 선언에 의해 특정 패키지 안의 클래스들을 스캔
+- Bean Configuration 파일에 Bean을 따로 등록하지 않아도 사용할 수 있음
+  - @Component Annotation이 있는 클래스에 대하여 Spring Bean 인스턴스를 생성해줌
