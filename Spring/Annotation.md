@@ -62,7 +62,7 @@ public void deprecatedFunc()
 ### @Qualifier
 - @Autowired로 연결한 Bean 목록에서 Bean을 구별해줌
 
-## 4) RequestMapping
+## 4) @RequestMapping
 - 요청에 대해 어떤 Controller, 어떤 메소드가 처리할지를 맵핑 해줌
 
 ```java
@@ -71,4 +71,23 @@ public void deprecatedFunc()
       {
         ...
       }
+```
+
+## 5) @Transactional
+- 선언적 트랜잭션
+- 적용된 범위에서는 트랜잭션 기능이 포함된 프록시 객체가 생성되어 자동으로 commit 혹은 rollback을 진행해줌
+
+```java
+@Transactional (propagation=Propagation.REQUIRED, rollbackFor={Exception.class})
+public void test()
+{
+  ...
+}
+```
+
+## 6) @Scheduled
+cron 표현식 사용시에 많이 쓰는 Annotation. 스케줄 정보를 등록할 수 있다
+
+```java
+@Scheduled(cron="0 0/1 * * * ?")
 ```
