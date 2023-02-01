@@ -41,3 +41,4 @@
 
 ## 🌱 Backend
 - [Domain Name](Backend/Domain%20Name.md)
+- [HTTP Query Parameter Array 사용](Backend/HTTP%20Query%20Array%20사용.md)
