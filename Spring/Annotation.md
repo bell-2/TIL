@@ -73,7 +73,25 @@ public void deprecatedFunc()
       }
 ```
 
-## 5) @Component
+## 5) @Transactional
+- 선언적 트랜잭션
+- 적용된 범위에서는 트랜잭션 기능이 포함된 프록시 객체가 생성되어 자동으로 commit 혹은 rollback을 진행해줌
+
+```java
+@Transactional (propagation=Propagation.REQUIRED, rollbackFor={Exception.class})
+public void test()
+{
+  ...
+}
+```
+
+## 6) @Scheduled
+cron 표현식 사용시에 많이 쓰는 Annotation. 스케줄 정보를 등록할 수 있다
+
+```java
+@Scheduled(cron="0 0/1 * * * ?")
+```
+## 7) @Component
 - component-scan을 선언에 의해 특정 패키지 안의 클래스들을 스캔
 - Bean Configuration 파일에 Bean을 따로 등록하지 않아도 사용할 수 있음
   - @Component Annotation이 있는 클래스에 대하여 Spring Bean 인스턴스를 생성해줌
