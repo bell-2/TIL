@@ -91,3 +91,7 @@ cron 표현식 사용시에 많이 쓰는 Annotation. 스케줄 정보를 등록
 ```java
 @Scheduled(cron="0 0/1 * * * ?")
 ```
+## 7) @Component
+- component-scan을 선언에 의해 특정 패키지 안의 클래스들을 스캔
+- Bean Configuration 파일에 Bean을 따로 등록하지 않아도 사용할 수 있음
+  - @Component Annotation이 있는 클래스에 대하여 Spring Bean 인스턴스를 생성해줌
