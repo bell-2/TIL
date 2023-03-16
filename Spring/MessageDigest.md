@@ -1,4 +1,4 @@
-# Java의 암호화 클래스 MessageDigest
+# Java의 Hash 알고리즘 지원 클래스 MessageDigest
 
 요즘 핫한 보안 문제 ❗
 
