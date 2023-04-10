@@ -22,6 +22,7 @@
   - [Symbolic Link](Linux/link.md)
   - [PID](Linux/Pid.md)
   - [pprof](Linux/pprof.md)
+  - [ldd](Linux/ldd.md)
 
 ## 🌱 Docker
   - [mariadb container 사용](Docker/mariadb.md)
