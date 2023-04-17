@@ -1,10 +1,10 @@
-# Java의 암호화 클래스 MessageDigest
+# Java의 Hash 알고리즘 지원 클래스 MessageDigest
 
 요즘 핫한 보안 문제 ❗
 
-이번에 신규 개발하는 기능에도 보안을 위해 사용자의 정보가 담긴 내용은 암호화를 하기로 했답니다.
+이번에 신규 개발하는 기능에도 보안을 위해 사용자의 정보가 담긴 내용은 해시 값을 사용하여 암호화를 하기로 했답니다.
 
-Java에서 암호화를 할 때 많이 쓰는 클래스는 MessageDigest인데, 오늘은 이 친구를 정리해보겠습니다.
+Java에서 해시 생성 할 때 많이 쓰는 클래스는 MessageDigest인데, 오늘은 이 친구를 정리해보겠습니다.
 
 <br>
 
@@ -55,7 +55,7 @@ https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.ht
 <br>
 
 ```java
-md.update(("암호화할 문자열").getBytes())
+md.update(("문자열").getBytes())
 ```
 
 update()를 사용해서 해시를 생성하고자하는 문자열을 MessageDigest에 update 해줍니다.
