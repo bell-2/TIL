@@ -65,7 +65,6 @@ Mybatis-Spring을 사용하는 경우에는 SqlSessionFactory를 주입 받습�
 
 
 
-
 ```java
 	@Autowired
 	private SqlSession sqlSession;
