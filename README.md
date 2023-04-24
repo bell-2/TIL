@@ -28,7 +28,7 @@
 ## 🌱 Docker
   - [mariadb container 사용](Docker/mariadb.md)
 
-## 🌱 Spring & Java
+## 🌱 Spring 과 Java
   - [Spring Framework](Spring/SpringFramework.md)
   - [Spring Model](Spring/Spring%20Model.md)
   - [MVC란](Spring/MVC.md)
