@@ -30,7 +30,7 @@ public class LombokClass
 }
 ```
 
-그렇다면 lombok을 사용한다면?
+그렇다면 lombok을 사용한다면??
 ```java
 @Getter
 @Setter
