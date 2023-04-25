@@ -62,6 +62,8 @@ Mybatis-Spring을 사용하는 경우에는 SqlSessionFactory를 주입 받습�
 설정 파일과 등록해준 Bean으로 SqlSessionFactory를 생성해줘요
 
 ### SQL 쿼리 Mapping 파일 작성
+
+
 Mybatis의 가장 큰 장점은 쿼리를 작성할 때 나타납니다
 DAO 로직에서 쿼리문을 실행만 해주면 된답니다.
 간단한 SELECT 쿼리로 예시를 들어보겠습니다.
@@ -81,17 +83,11 @@ public class PersonDAO
 DAO 로직에서 호출하고 싶은 쿼리 id를 불러봅시다.
 
 
-```SQL
-<select id="selectPerson" parameterType="int" resultType="hashmap">
-  SELECT * FROM PERSON WHERE ID = #{id}
-</select>
 
 ```java
 	@Autowired
 	private SqlSession sqlSession;
-
-
-
+```
 
 ---
 
