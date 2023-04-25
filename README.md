@@ -23,6 +23,7 @@
   - [PID](Linux/Pid.md)
   - [pprof](Linux/pprof.md)
   - [bashrc ps1](Linux/bashrc%20PS%20%EC%84%A4%EC%A0%95.md)
+  - [ldd](Linux/ldd.md)
 
 ## 🌱 Docker
   - [mariadb container 사용](Docker/mariadb.md)
