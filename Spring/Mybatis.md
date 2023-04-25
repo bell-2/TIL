@@ -85,7 +85,12 @@ DAO 로직에서 호출하고 싶은 쿼리 id를 불러봅시다.
 <select id="selectPerson" parameterType="int" resultType="hashmap">
   SELECT * FROM PERSON WHERE ID = #{id}
 </select>
-```
+
+```java
+	@Autowired
+	private SqlSession sqlSession;
+
+
 
 
 ---
