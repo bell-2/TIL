@@ -75,6 +75,7 @@ Mybatis-Spring을 사용하는 경우에는 SqlSessionFactory를 주입 받습�
 ## 🗨 SQL 쿼리 Mapping 파일 작성
 <br>
 
+<<<<<<< HEAD
 ```SQL
 SELECT user_addr FROM user_info WHERE user_name='bell';
 ```
@@ -123,6 +124,25 @@ id는 SQL 쿼리들을 구분해주는 값이라서, 저는 해당 쿼리를 나
 
 <br>
 
+Mybatis의 가장 큰 장점은 쿼리를 작성할 때 나타납니다
+DAO 로직에서 쿼리문을 실행만 해주면 된답니다.
+간단한 SELECT 쿼리로 예시를 들어보겠습니다.
+
+```java
+public class PersonDAO
+{
+  @Autowired
+    private SqlSession sqlSession;
+  public HashMap<String, String> getPerson(int id){
+    // 
+    return sqlSession.selectList("selectPerson", id);
+  }
+}
+```
+
+DAO 로직에서 호출하고 싶은 쿼리 id를 불러봅시다.
+
+
 ```java
 {
   HashMap<String, Object> param = new /*생략*/;
@@ -131,6 +151,7 @@ id는 SQL 쿼리들을 구분해주는 값이라서, 저는 해당 쿼리를 나
   sqlSession.selectOne("getUserAddr", param);
 }
 ```
+
 
 ```SQL
 <select id="getUserAddr" parameterType="hashMap" resultMap="String">
@@ -145,6 +166,7 @@ id는 SQL 쿼리들을 구분해주는 값이라서, 저는 해당 쿼리를 나
 
 쿼리를 수행하고 얻고 싶은 실행 결과의 Type 입니다.
 조회할 내용이 여러 개면 Type을 hashMap이나 클래스 등으로 사용할 수 있습니다.
+
 
 
 ---
