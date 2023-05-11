@@ -35,3 +35,36 @@ int solution(int n, int m, vector<int> section) {
 
     return answer;
 }
+
+/**
+ * 2안
+*/
+#include <string>
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+            // 벽길이 롤러길이
+int solution(int n, int m, vector<int> section) {
+    // 적어도 한 번 페인트칠 (1 ≤ m ≤ n ≤ 100,000)
+    int answer = 1;
+    
+    // first value
+    int pivot = section[0];
+    for(auto one : section)
+    {
+        if(one < pivot+m)
+        {
+            // can paint (no count)
+            continue;
+        }
+        else
+        {
+            pivot = one;
+            answer++;
+        }
+    }
+
+    return answer;
+}
