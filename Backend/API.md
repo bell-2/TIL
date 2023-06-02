@@ -15,12 +15,7 @@ API (Application Programming Interface)
 3. WebSocket API
 4. REST API
 
-
-
-
-
-
 ---
 
 출처
-- https://aws.amazon.com/ko/what-is/api/
+- https://aws.amazon.com/ko/what-is/api/git
