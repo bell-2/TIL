@@ -10,6 +10,31 @@ JDBC를 사용하여 DB 작업을 캡슐화 해주고 코드와 파라미터 설
 
 <br>
 
+## 🫡 특징
+- 쉬운 접근성, 코드가 간결함
+- JDBC API로 JDBC 기능을 대부분 제공하고 있음. (JDBC 코드를 소스 코드에서 작성 안해도 되서 깔꼼)
+- SQL을 그대로 사용해서 DAO에서 Object 중심으로 개발 가능
+- SQL 변경이 됐을 때, 자바 코드를 수정하거나 새로 빌드 하지 않아도 됨
+
+<br>
+
+## Spring에서 MyBatis 동작
+
+![Alt text](image.png)
+
+소스 코드에서는 SQL 쿼리를 담고 있는 Mapper 파일을 통해 MyBatis를 사용할 수 있습니다
+그러면 MyBatis에서 JDBC API를 사용해서 알아서 해주는 것이지요
+
++ ORM (Object Relational Mapping)
+객체와 관계형 데이터베이스를 맵핑해서 데이터 베이스 테이블을 객체 지향적으로 사용하기 위한 기술
+
+<br>
+
+![Alt text](image-1.png)
+
+
+<br>
+
 ## 🗨 설치
 Mybatis는 mybatis-x.x.x.jar 파일을 classpath에 구성해줘야 합니다
 
@@ -57,7 +82,8 @@ value에 들어가는 값은 대문자로 기입해줍니다.
 
 ## 🗨 SqlSessionFactory
 Mybatis는 SQL 실행하고 Transaction 관리를 해주는 클래스인 SqlSessionFactory 인스턴스를 사용합니다. <br>
-SqlSessionFactory는 SqlSessionFactoryBuilder를 사용해서 만들 수 있습니다. 
+SqlSessionFactory는 SqlSessionFactoryBuilder를 사용해서 만들 수 있습니다.  <br>
+Sql SessionFactory에서 SqlSession을 생성 합네다
 
 <br>
 
@@ -69,6 +95,11 @@ Mybatis-Spring을 사용하는 경우에는 SqlSessionFactory를 주입 받습�
 
 ### 💨 SqlSessionFactoryBuilder
 설정 파일과 등록해준 Bean으로 SqlSessionFactory를 생성해줘요
+
+<br>
+
+### SqlSession
+SQL 실행이나, Transaction 관리를 실행해줍니다. 스레드마다 생성돼요
 
 <br>
 
@@ -174,3 +205,5 @@ DAO 로직에서 호출하고 싶은 쿼리 id를 불러봅시다.
 출처
 
 https://spring.tistory.com/3
+
+https://velog.io/@skarb4788/SPRING-MyBatis
