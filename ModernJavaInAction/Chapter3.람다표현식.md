@@ -577,5 +577,68 @@ Comparator<Apple> c = (a1, a2) -> a1.getWeight().compareTo(a2.getWeight());
     }
 ```
 
+근데, 람다에서 지역 변수를 사용할 때는 주의할 점이 있다.
+
+지역 변수를 final로 선언하거나 final로 취급해야한다.
+
+```java
+    @Test
+    @DisplayName("람다 지역변수는 final 처럼 취급 되어야 한다.")
+    void localVarLamdaTest () {
+        int a = 10;
+        int b = 20;
+
+        Runnable runnable = () -> System.out.println(a+b);
+
+        System.out.println(a);
+    }
+```
+
+java 8 이전에는 `final int a = 10;` 처럼 final로 선언을 해줘야했지만, java 8에서는 선언은 생략이 가능하다. (이를 effectively final 이라고 함)
+
+위 예제는 a, b 지역 변수가 한번만 값이 변경되고 실질적으로 final로 동작하기 때문에 람다 문에서 오류가 발생하지 않는다.
+
+하지만 값에 변경이 일어나면 사용할 수가 없습네다.
+
+```java
+ @Test
+    @DisplayName("람다 지역변수는 final 처럼 취급 되어야 한다.")
+    void localVarLamdaTest () {
+        int a = 10;
+        int b = 20;
+
+        a = 30;
+
+        Runnable runnable = () -> System.out.println(a+b); // Error!!
+
+        System.out.println(a);
+    }
+```
+
+에러가 발생한다.
+
+왜 그럴까?
+
+이유는, 람다 표현식이 클로저를 형성할 때 해당 변수의 값을 저장하기 때문이다.
+
+(클로저: 코드 블록 안에서 자유롭게 접근할 수 있는 외부 범위의 변수)
+
+람다가 클로저를 형성할 때는, 지역 변수를 사용하고 싶다면 해당 변수의 값을 복사하여 사용한다.
+
+클로저는 자신이 정의된 범위(scope)에서 외부 변수에 접근할 수 있는데, 이를 위해 람다는 해당 변수의 값을 final 또는 effectively final로 만들어 복사한다.
+
+복사를 통해 람다 표현식은 그 값을 고정된 상태로 유지하며 사용이 가능하람다~!
+
+따라서 람다가 사용될 때의 변수 값과 람다가 실행될 때의 변수 값이 항상 같게 된다.
+
+그럼 뭐가 좋으냐. 스레드 안전성이나 예측 가능한 동작이 보장됩니다.
+
+만약 람다가 변수의 참조가 아니라 값을 직접 변경한다면 문제가 발생할 수 있을 것임.. 
+
+정리하자면, 람다 표현식이 스레드 안전성과 예측 가능한 동작을 보장하기 위해 이런 제약을 뒀고
+
+final 또는 effectively final 변수를 사용함으로써 람다 표현식이 클로저로 동작할 때 변수의 값이 변하지 않아 예상치 못한 동작을 방지할 수 있다람다~
+
+
 
 
