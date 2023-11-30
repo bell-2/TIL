@@ -745,3 +745,27 @@ List<Integer> lengths = words.stream()
 ### 2. 생성자 참조
 
 내가 제일 신기하다고 생각한 부분..
+
+위에서 봤던 함수형 인터페이스 기억나는감?
+
+시그니처가 같은 함수형 인터페이스를 사용해서 생성자를 만들 수 있다.
+
+```java
+  @Test
+    @DisplayName("생성자 참조")
+    void constructorReference() {
+        // 람다 표현식으로 Apple 객체 생성자 만들기
+        Supplier<Apple> appleSupplier1 = () -> new Apple();
+
+        // 생성자 참조로 이렇게 사용할 수 있다
+        Supplier<Apple> appleSupplier2 = Apple::new;
+
+        // Supplier의 get으로 객체 만들 수도 있다
+        Apple apple = appleSupplier2.get();
+
+        BiFunction<Color, Integer, Apple> biFunction = Apple::new;
+        Apple apple1 = biFunction.apply(Color.RED, 20);
+    }
+```
+
+인스턴스화하지 않고도 생성자로 객체를 만들 수 있다. 싱기
