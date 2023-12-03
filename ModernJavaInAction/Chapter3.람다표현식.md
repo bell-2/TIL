@@ -768,4 +768,97 @@ List<Integer> lengths = words.stream()
     }
 ```
 
-인스턴스화하지 않고도 생성자로 객체를 만들 수 있다. 싱기
+인스턴스화하지 않고도 생성자로 객체를 만들 수 있다.
+
+### 7. 람다, 메서드 참조 활용하기
+
+1. sort 메서드에 정렬 전략 전달하기
+
+sort 함수의 시그니처
+
+```java
+void sort(Comparator<? super E> c)
+```
+
+```java
+    public class AppleComparator implements Comparator<Apple> {
+
+        @Override
+        public int compare(Apple o1, Apple o2) {
+            return o1.getWeight() > o2.getWeight() ? o1.getWeight() : o2.getWeight();
+        }
+    }
+
+    @Test
+    @DisplayName("sort 전략 전달하기")
+    void sortTest() {
+        List<Apple> appleList = new ArrayList<>();
+        appleList.sort(new AppleComparator());
+    }
+```
+sort 동작을 파라미터화한 예제이다. 이렇게 Comparator 객체로 전략을 전달하면 다양한 전략을 전달할 수 있다.
+
+2. 익명 클래스 사용
+
+만약 위 코드의 Comparator 클래스를 한 번만 사용한다면 클래스로 구현하는 것보다는 익명 클래스로 작성하면 간단하다.
+
+```java
+    @Test
+    @DisplayName("익명 클래스로 구현하기")
+    void anonymousClassTest() {
+        List<Apple> appleList = new ArrayList<>();
+        //appleList.sort(new AppleComparator());
+
+        appleList.sort(new Comparator<Apple>() {
+            @Override
+            public int compare(Apple o1, Apple o2) {
+                return o1.getWeight() > o2.getWeight() ? o1.getWeight() : o2.getWeight();
+            }
+        });
+    }
+```
+
+3. 람다 표현식 사용하기
+
+코드를 다이어트 시켜보자
+
+Comparator 함수의 디스크립터는? `(T,T) -> int`
+
+그러면 Apple Comparator 함수 디스크립터는? `(Apple, Apple) -> int`
+
+```java
+    @Test
+    @DisplayName("람다로 구현하기")
+    void lamdaTest() {
+        List<Apple> appleList = new ArrayList<>();
+
+        // 람다 표현식 사용하면 이렇게!
+        appleList.sort((Apple o1, Apple o2) -> o1.getWeight() > o2.getWeight() ? o1.getWeight() : o2.getWeight());
+        // 자바 컴파일러는 람다 표현식의 컨텍스트를 보고, 파라미터 형식을 추론할 수 있다.
+        appleList.sort((o1, o2) -> o1.getWeight() > o2.getWeight() ? o1.getWeight() : o2.getWeight());
+    }
+```
+
+더 가독성을 향상시키기 위해서 Comparator 객체로 만드는 Function 함수를 
+
+```java
+    @Test
+    @DisplayName("람다로 구현하기")
+    void lamda2Test() {
+        List<Apple> appleList = new ArrayList<>();
+
+        Comparator<Apple> comparator = Comparator.comparing((Apple apple)-> apple.getWeight());
+        appleList.sort(Comparator.comparing(apple -> apple.getWeight()));
+    }
+```
+
+4. 메서드 참조 사용하기
+
+```java
+    @Test
+    @DisplayName("메서드 참조로 구현하기")
+    void methodTest() {
+        List<Apple> appleList = new ArrayList<>();
+        appleList.sort(Comparator.comparing(Apple::getWeight));
+    }
+```
