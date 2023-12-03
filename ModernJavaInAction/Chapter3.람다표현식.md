@@ -839,7 +839,29 @@ Comparator 함수의 디스크립터는? `(T,T) -> int`
     }
 ```
 
-더 가독성을 향상시키기 위해서 Comparator 객체로 만드는 Function 함수를 
+더 가독성을 향상시키기 위해서 Comparator 객체의 comparing 메서드를 사용할 수 있다.
+
+Comparator는 객체로 만드는 Function 함수를 인수로 받는 정적 메서드인 comparing을 포함하고 있다.
+
+
+```java
+static <T,U extends Comparable<? super U>>
+Comparator<T>	comparing(Function<? super T,? extends U> keyExtractor)
+```
+
+타입 T에서 비교 가능한 정렬 키를 추출하는 함수를 받아, 해당 정렬 키로 객체 T를 비교하는 Comparator<T>를 반환해준다.
+
+더 가독성을 향상시키기 위해서 Comparator 객체의 comparing 메서드를 사용할 수 있다.
+
+Comparator는 객체로 만드는 Function 함수를 인수로 받는 정적 메서드인 comparing을 포함하고 있다.
+
+
+
+static <T,U extends Comparable<? super U>>
+Comparator<T> comparing(Function<? super T,? extends U> keyExtractor)
+
+타입 T에서 비교 가능한 정렬 키를 추출하는 함수를 받아, 해당 정렬 키로 객체 T를 비교하는 Comparator<T>를 반환해준다.
+
 
 ```java
     @Test
@@ -862,3 +884,12 @@ Comparator 함수의 디스크립터는? `(T,T) -> int`
         appleList.sort(Comparator.comparing(Apple::getWeight));
     }
 ```
+
+---
+
+요약
+- 람다 표현식은 코드를 간결하게 표현하기 위한 자바 8에 추가된 문법이다.
+- 람다 표현식은 익명 함수의 한 종류이다. 이름은 없지만 파라미터 리스트/바디/반환 형식을 가진다.
+- 함수형 인터페이스는 하나의 추상 메서드를 가지는 인터페이스다.
+- 람다 표현식 전체가 함수형 인터페이스의 인스턴스가 된다.
+
