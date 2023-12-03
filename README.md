@@ -49,6 +49,12 @@
   - [문자열의 시작과 끝](Spring/%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%98%20%EC%8B%9C%EC%9E%91%EA%B3%BC%20%EB%81%9D%20%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0.md)
   - [REST](Spring/REST.md)
 
+## 🌱 ModernJavaInAction 내용 정리
+- [Chapter2](ModernJavaInAction/Chapter2.동작파라미터화.md)
+- [Chapter2](ModernJavaInAction/실행어라운드패턴.md)
+- [Chapter2](ModernJavaInAction/함수형%20인터페이스.md)
+- [Chapter3](ModernJavaInAction/Chapter3.람다표현식.md)
+
 ## 🌱 Backend
 - [Domain Name](Backend/Domain%20Name.md)
 - [HTTP Query Parameter Array 사용](Backend/HTTP%20Query%20Array%20사용.md)
