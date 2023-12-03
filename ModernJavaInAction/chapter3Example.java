@@ -307,6 +307,64 @@ public class Lamda {
         Apple apple1 = biFunction.apply(Color.RED, 20);
     }
 
+    
+    public class AppleComparator implements Comparator<Apple> {
+
+        @Override
+        public int compare(Apple o1, Apple o2) {
+            return o1.getWeight() > o2.getWeight() ? o1.getWeight() : o2.getWeight();
+        }
+    }
+
+    @Test
+    @DisplayName("sort 전략 전달하기")
+    void sortTest() {
+        List<Apple> appleList = new ArrayList<>();
+        appleList.sort(new AppleComparator());
+    }
+
+    @Test
+    @DisplayName("익명 클래스로 구현하기")
+    void anonymousClassTest() {
+        List<Apple> appleList = new ArrayList<>();
+        //appleList.sort(new AppleComparator());
+
+        appleList.sort(new Comparator<Apple>() {
+            @Override
+            public int compare(Apple o1, Apple o2) {
+                return o1.getWeight() > o2.getWeight() ? o1.getWeight() : o2.getWeight();
+            }
+        });
+    }
+
+    @Test
+    @DisplayName("람다로 구현하기")
+    void lamdaTest() {
+        List<Apple> appleList = new ArrayList<>();
+
+        // 람다 표현식 사용하면 이렇게!
+        appleList.sort((Apple o1, Apple o2) -> o1.getWeight() > o2.getWeight() ? o1.getWeight() : o2.getWeight());
+        // 자바 컴파일러는 람다 표현식의 컨텍스트를 보고, 파라미터 형식을 추론할 수 있다.
+        appleList.sort((o1, o2) -> o1.getWeight() > o2.getWeight() ? o1.getWeight() : o2.getWeight());
+    }
+
+    @Test
+    @DisplayName("람다로 구현하기")
+    void lamda2Test() {
+        List<Apple> appleList = new ArrayList<>();
+
+        Comparator<Apple> comparator = Comparator.comparing((Apple apple)-> apple.getWeight());
+        appleList.sort(Comparator.comparing(apple -> apple.getWeight()));
+    }
+
+    @Test
+    @DisplayName("메서드 참조로 구현하기")
+    void methodTest() {
+        List<Apple> appleList = new ArrayList<>();
+        appleList.sort(Comparator.comparing(Apple::getWeight));
+    }
+
+
 
     public class Apple {
         private Color color;
