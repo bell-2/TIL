@@ -54,6 +54,9 @@
 - [Chapter2](ModernJavaInAction/실행어라운드패턴.md)
 - [Chapter2](ModernJavaInAction/함수형%20인터페이스.md)
 - [Chapter3](ModernJavaInAction/Chapter3.람다표현식.md)
+- [Chapter4](ModernJavaInAction/Chapter4.1.Stream.md)
+- [Chapter4](ModernJavaInAction/Chapter4.2.Stream.md)
+- [Chapter4](ModernJavaInAction/Chapter4.3.Stream.md)
 
 ## 🌱 Backend
 - [Domain Name](Backend/Domain%20Name.md)
